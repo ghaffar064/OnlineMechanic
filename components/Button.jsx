@@ -1,6 +1,7 @@
 import { Text, TouchableOpacity, StyleSheet } from 'react-native'
 import React from 'react'
 import COLORS from '../constants/colors'
+import { responsiveFontSize, responsiveHeight, responsiveWidth } from 'react-native-responsive-dimensions';
 
 const Button = (props) => {
     const filledBgColor = props.color || COLORS.primary;
@@ -17,18 +18,18 @@ const Button = (props) => {
             }}
             onPress={props.onPress}
         >
-            <Text style={{ fontSize: 18, ... { color: textColor } }}>{props.title}</Text>
+            <Text style={{ fontSize: responsiveFontSize(2), ... { color: textColor } }}>{props.title}</Text>
         </TouchableOpacity>
     )
 }
 
 const styles = StyleSheet.create({
     button: {
-        paddingBottom: 16,
-        paddingVertical: 10,
+        paddingBottom: responsiveHeight(2.3),
+        paddingVertical: responsiveHeight(2),
         borderColor: COLORS.primary,
-        borderWidth: 2,
-        borderRadius: 12,
+        borderWidth: responsiveWidth(.1),
+        borderRadius: responsiveWidth(5),
         alignItems: 'center',
         justifyContent: 'center'
     }

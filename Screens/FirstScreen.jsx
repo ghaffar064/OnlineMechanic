@@ -1,76 +1,85 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View,Image,TouchableOpacity, ImageBackground } from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableOpacity, ImageBackground } from 'react-native';
+import { responsiveFontSize, responsiveHeight, responsiveWidth } from 'react-native-responsive-dimensions';
 
 
-export default function FirstScreen({navigation})
-{
-    return(
+export default function FirstScreen({ navigation }) {
+  return (
 
-            
+
     <View style={styles.container}>
       <Text style={{
-        color: 'black', textAlign: 'center', fontSize: 29, fontStyle: 'italic', paddingTop: 40,
+        color: 'black', textAlign: 'center',
+         fontSize: responsiveFontSize(3), fontStyle: 'italic' 
+         ,marginTop:responsiveHeight(5),
         fontWeight: 'bold'
       }}>Online Mechanic
       </Text>
-        <View style={styles.view1}>      
-       <Image source={require("../assets/main-page.png")}
-      style={{ width: 400, height: 400 }}
-    >
-     
-     
-     
-    </Image>
+      <View style={styles.view1}>
+        <Image source={require("../assets/main-page.png")}
+          style={{ width: responsiveWidth(100), 
+            height:responsiveHeight(50),resizeMode:'contain' }}
+        >
 
-    </View> 
-    <View style={styles.view2}>
-    <Text style={{
-        color: 'grey', fontSize: 19, paddingTop: 20, paddingBottom: 10,
-        textAlign:'center'
-      }}>Here is the solution to your vehicle problems!</Text>
 
-      <TouchableOpacity onPress={()=>navigation.navigate('Login')}>
+
+        </Image>
+
+      </View>
+      <View >
         <Text style={{
-          color: 'grey', textAlign: 'center', fontSize: 29, paddingTop: 10,
-          borderRadius: 20, borderColor: 'grey', borderWidth: 2, marginRight: 70, marginLeft: 50,
-          paddingBottom: 10
+          color: 'grey', fontSize: responsiveFontSize(2),
+           marginTop: responsiveHeight(2), marginBottom: responsiveHeight(3),
+          textAlign: 'center'
+        }}>Here is the solution to your vehicle problems!</Text>
 
-        }}>Login</Text>
-      </TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate('Login')}>
+          <Text style={{
+            color: 'grey', textAlign: 'center',
+             fontSize:responsiveFontSize(2.8), paddingTop: responsiveHeight(1),
+            borderRadius: responsiveWidth(4),
+             borderColor: 'grey',
+              borderWidth: responsiveWidth(.25), 
+              marginRight:responsiveWidth(15), marginLeft: responsiveWidth(12),
+            paddingBottom: responsiveHeight(1)
+
+          }}>Login</Text>
+        </TouchableOpacity>
 
 
-      <TouchableOpacity
-       onPress={()=>navigation.navigate('Signup')}  style={{ paddingTop: 10, color: 'red' }}>
-        <Text style={{
-          color: 'grey', textAlign: 'center', fontSize: 29, paddingTop: 10,
-          borderRadius: 20, borderColor: 'grey', borderWidth: 2, marginRight: 70, marginLeft: 50,
-          paddingBottom: 10
+        <TouchableOpacity
+          onPress={() =>
+           navigation.navigate('Signup')} 
+           style={{ marginTop: responsiveHeight(2) }}>
+          <Text style={{
+             color: 'grey', textAlign: 'center',
+             fontSize:responsiveFontSize(2.8), paddingTop: responsiveHeight(1),
+            borderRadius: responsiveWidth(4),
+             borderColor: 'grey',
+              borderWidth: responsiveWidth(.25), 
+              marginRight:responsiveWidth(15), marginLeft: responsiveWidth(12),
+            paddingBottom: responsiveHeight(1)
 
-        }}>Signup</Text>
-      </TouchableOpacity>
+
+          }}>Signup</Text>
+        </TouchableOpacity>
+
+      </View>
 
     </View>
 
-  </View>
-
-    );   
+  );
 }
 const styles = StyleSheet.create({
-    container: {
-     
-      flex: 1,
-      backgroundColor: 'white',
-      //alignItems: 'center',
-      //justifyContent: 'center',
-    },
-    view1:{
-      paddingTop:50
+  container: {
 
-    },
-    view2:
-    {
+    flex: 1,
+    backgroundColor: 'white',
 
-    }
-  });
+  },
+  view1: {
+      marginTop:responsiveHeight(5)
+  },
 
-  
+});
+

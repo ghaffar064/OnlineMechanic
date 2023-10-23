@@ -7,14 +7,17 @@ import tw from "tailwind-react-native-classnames"
 export default function MapScreen() {
   return (
     <View>
-     <View style = {tw `h-1/2`}>
-        <Map/>
-        
-        </View>
+      <View style={tw`h-1/2`}
+           
+      
+      >
+        <Map />
 
-        <View style = {tw `h-1/2`}>
-        
-        </View>
+      </View>
+
+      <View style={tw`h-1/2`}>
+     
+      </View>
     </View>
   )
 }

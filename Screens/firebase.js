@@ -1,8 +1,10 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import {getAuth} from  'firebase/auth'
+import firebase from 'firebase/app';
+import { getStorage } from "firebase/storage";
 
-import 'firebase/auth'
+
 //import { getAnalytics } from "firebase/analytics";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -10,15 +12,16 @@ import 'firebase/auth'
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyADrTwf_SDTpw6RROq1hSpbGxIr0qJw6Ao",
-  authDomain: "online-mechanic-388611.firebaseapp.com",
-  databaseURL: "https://online-mechanic-388611-default-rtdb.asia-southeast1.firebasedatabase.app",
-  projectId: "online-mechanic-388611",
-  storageBucket: "online-mechanic-388611.appspot.com",
-  messagingSenderId: "419811276218",
-  appId: "1:419811276218:web:9b362ab6ca5e9aae7bd983",
-  measurementId: "G-XX6ZMQZC4K",
-  databaseURL:"https://online-mechanic-388611-default-rtdb.asia-southeast1.firebasedatabase.app/"
+  apiKey: "AIzaSyBuJQ0t9RD3wj6U1vhmItxBzMJcWsDKeWk",
+  authDomain: "onlinemechanic-mechanic-data.firebaseapp.com",
+  databaseURL: "https://onlinemechanic-mechanic-data-default-rtdb.firebaseio.com",
+  projectId: "onlinemechanic-mechanic-data",
+  storageBucket: "onlinemechanic-mechanic-data.appspot.com",
+  messagingSenderId: "563169692333",
+  appId: "1:563169692333:web:d39e6e68c9ef53f411d424",
+  measurementId: "G-8HNQ2E2VVZ",
+ 
+  databaseURL:"https://onlinemechanic-mechanic-data-default-rtdb.firebaseio.com/"
 
 };
 
@@ -26,5 +29,6 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 //const analytics = getAnalytics(app);
 const auth = getAuth(app);
+const storage = getStorage(app);
 //const provider = new GoogleAuthProvider();
-export {app,auth};
+export {app,auth,storage};
